@@ -8,6 +8,9 @@ class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+  Stream<User?> get authChanges => _auth.authStateChanges();
+  User get user => _auth.currentUser!;
+
   Future<bool> signInWithGoogle(BuildContext context) async {
     bool res = false;
     try {
@@ -26,7 +29,7 @@ class AuthMethods {
           _firestore.collection('users').doc(user.uid).set({
             'username': user.displayName,
             'uid': user.uid,
-            'profilePhotot': user.photoURL,
+            'profilePhoto': user.photoURL,
           });
         }
         res = true;

@@ -38,6 +38,7 @@ dependencies:
   cloud_firestore: ^3.4.9
   firebase_core: ^1.13.1
   firebase_auth: ^3.10.0
+  intl: ^0.17.0
  
   google_sign_in: ^5.4.2
   jitsi_meet: ^ 4.0.0

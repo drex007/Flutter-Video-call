@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_video_call/home_meeting_button.dart';
+import 'package:flutter_video_call/resources/auth_method.dart';
 import 'package:flutter_video_call/screens/history_meeting_screen.dart';
 import 'package:flutter_video_call/screens/meetings_screen.dart';
 import 'package:flutter_video_call/utils/colors.dart';
+import 'package:flutter_video_call/widgets/custom_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     MeetingScreen(),
     HistoryMeetingScreen(),
     Text("contacts"),
-    Text("settimgs")
+   CustomButton(text: 'Log Out', onPressed: () => AuthMethods().signOut()),
   ];
 
   @override

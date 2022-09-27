@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_video_call/resources/auth_method.dart';
 import 'package:flutter_video_call/screens/homeScreen.dart';
 import 'package:flutter_video_call/screens/login.dart';
+import 'package:flutter_video_call/screens/video_call_screen.dart';
 import 'package:flutter_video_call/utils/colors.dart';
 
 void main() async {
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
           ThemeData.dark().copyWith(scaffoldBackgroundColor: backgroundColor),
       routes: {
         '/login': (context) => LoginScreen(),
-        '/home': (context) => HomeScreen()
+        '/home': (context) => HomeScreen(),
+        '/video-call': (context) => VideoCallScreen()
       },
       home: StreamBuilder(
         stream: AuthMethods().authChanges,
